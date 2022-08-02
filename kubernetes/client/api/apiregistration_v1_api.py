@@ -64,7 +64,7 @@ class ApiregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.create_api_service_with_http_info(body, **kwargs)  # noqa: E501
 
-    def create_api_service_with_http_info(self, body, **kwargs):  # noqa: E501
+    def create_api_service_with_http_info(self, body, **kwargs):    # noqa: E501
         """create_api_service  # noqa: E501
 
         create an APIService  # noqa: E501
@@ -98,16 +98,12 @@ class ApiregistrationV1Api(object):
             'body',
             'pretty',
             'dry_run',
-            'field_manager'
+            'field_manager',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -134,17 +130,19 @@ class ApiregistrationV1Api(object):
         if 'field_manager' in local_var_params and local_var_params['field_manager'] is not None:  # noqa: E501
             query_params.append(('fieldManager', local_var_params['field_manager']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -196,7 +194,7 @@ class ApiregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.delete_api_service_with_http_info(name, **kwargs)  # noqa: E501
 
-    def delete_api_service_with_http_info(self, name, **kwargs):  # noqa: E501
+    def delete_api_service_with_http_info(self, name, **kwargs):    # noqa: E501
         """delete_api_service  # noqa: E501
 
         delete an APIService  # noqa: E501
@@ -236,16 +234,12 @@ class ApiregistrationV1Api(object):
             'grace_period_seconds',
             'orphan_dependents',
             'propagation_policy',
-            'body'
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -278,17 +272,19 @@ class ApiregistrationV1Api(object):
         if 'propagation_policy' in local_var_params and local_var_params['propagation_policy'] is not None:  # noqa: E501
             query_params.append(('propagationPolicy', local_var_params['propagation_policy']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -345,7 +341,7 @@ class ApiregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.delete_collection_api_service_with_http_info(**kwargs)  # noqa: E501
 
-    def delete_collection_api_service_with_http_info(self, **kwargs):  # noqa: E501
+    def delete_collection_api_service_with_http_info(self, **kwargs):    # noqa: E501
         """delete_collection_api_service  # noqa: E501
 
         delete collection of APIService  # noqa: E501
@@ -395,16 +391,12 @@ class ApiregistrationV1Api(object):
             'propagation_policy',
             'resource_version',
             'timeout_seconds',
-            'body'
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -443,17 +435,19 @@ class ApiregistrationV1Api(object):
         if 'timeout_seconds' in local_var_params and local_var_params['timeout_seconds'] is not None:  # noqa: E501
             query_params.append(('timeoutSeconds', local_var_params['timeout_seconds']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -498,7 +492,7 @@ class ApiregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.get_api_resources_with_http_info(**kwargs)  # noqa: E501
 
-    def get_api_resources_with_http_info(self, **kwargs):  # noqa: E501
+    def get_api_resources_with_http_info(self, **kwargs):    # noqa: E501
         """get_api_resources  # noqa: E501
 
         get available resources  # noqa: E501
@@ -525,15 +519,11 @@ class ApiregistrationV1Api(object):
         local_var_params = locals()
 
         all_params = [
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -550,15 +540,19 @@ class ApiregistrationV1Api(object):
 
         query_params = []
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -612,7 +606,7 @@ class ApiregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.list_api_service_with_http_info(**kwargs)  # noqa: E501
 
-    def list_api_service_with_http_info(self, **kwargs):  # noqa: E501
+    def list_api_service_with_http_info(self, **kwargs):    # noqa: E501
         """list_api_service  # noqa: E501
 
         list or watch objects of kind APIService  # noqa: E501
@@ -656,16 +650,12 @@ class ApiregistrationV1Api(object):
             'limit',
             'resource_version',
             'timeout_seconds',
-            'watch'
+            'watch',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -700,15 +690,21 @@ class ApiregistrationV1Api(object):
         if 'watch' in local_var_params and local_var_params['watch'] is not None:  # noqa: E501
             query_params.append(('watch', local_var_params['watch']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf;stream=watch'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                    'application/json;stream=watch',
+                    'application/vnd.kubernetes.protobuf;stream=watch',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -759,7 +755,7 @@ class ApiregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.patch_api_service_with_http_info(name, body, **kwargs)  # noqa: E501
 
-    def patch_api_service_with_http_info(self, name, body, **kwargs):  # noqa: E501
+    def patch_api_service_with_http_info(self, name, body, **kwargs):    # noqa: E501
         """patch_api_service  # noqa: E501
 
         partially update the specified APIService  # noqa: E501
@@ -797,16 +793,12 @@ class ApiregistrationV1Api(object):
             'pretty',
             'dry_run',
             'field_manager',
-            'force'
+            'force',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -841,17 +833,19 @@ class ApiregistrationV1Api(object):
         if 'force' in local_var_params and local_var_params['force'] is not None:  # noqa: E501
             query_params.append(('force', local_var_params['force']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -906,7 +900,7 @@ class ApiregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.patch_api_service_status_with_http_info(name, body, **kwargs)  # noqa: E501
 
-    def patch_api_service_status_with_http_info(self, name, body, **kwargs):  # noqa: E501
+    def patch_api_service_status_with_http_info(self, name, body, **kwargs):    # noqa: E501
         """patch_api_service_status  # noqa: E501
 
         partially update status of the specified APIService  # noqa: E501
@@ -944,16 +938,12 @@ class ApiregistrationV1Api(object):
             'pretty',
             'dry_run',
             'field_manager',
-            'force'
+            'force',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -988,17 +978,19 @@ class ApiregistrationV1Api(object):
         if 'force' in local_var_params and local_var_params['force'] is not None:  # noqa: E501
             query_params.append(('force', local_var_params['force']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -1051,7 +1043,7 @@ class ApiregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.read_api_service_with_http_info(name, **kwargs)  # noqa: E501
 
-    def read_api_service_with_http_info(self, name, **kwargs):  # noqa: E501
+    def read_api_service_with_http_info(self, name, **kwargs):    # noqa: E501
         """read_api_service  # noqa: E501
 
         read the specified APIService  # noqa: E501
@@ -1085,16 +1077,12 @@ class ApiregistrationV1Api(object):
             'name',
             'pretty',
             'exact',
-            'export'
+            'export',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1123,15 +1111,19 @@ class ApiregistrationV1Api(object):
         if 'export' in local_var_params and local_var_params['export'] is not None:  # noqa: E501
             query_params.append(('export', local_var_params['export']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501

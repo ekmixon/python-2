@@ -39,14 +39,12 @@ def create_job_object():
     spec = client.V1JobSpec(
         template=template,
         backoff_limit=4)
-    # Instantiate the job object
-    job = client.V1Job(
+    return client.V1Job(
         api_version="batch/v1",
         kind="Job",
         metadata=client.V1ObjectMeta(name=JOB_NAME),
-        spec=spec)
-
-    return job
+        spec=spec,
+    )
 
 
 def create_job(api_instance, job):

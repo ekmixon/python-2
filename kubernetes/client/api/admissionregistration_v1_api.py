@@ -64,7 +64,7 @@ class AdmissionregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.create_mutating_webhook_configuration_with_http_info(body, **kwargs)  # noqa: E501
 
-    def create_mutating_webhook_configuration_with_http_info(self, body, **kwargs):  # noqa: E501
+    def create_mutating_webhook_configuration_with_http_info(self, body, **kwargs):    # noqa: E501
         """create_mutating_webhook_configuration  # noqa: E501
 
         create a MutatingWebhookConfiguration  # noqa: E501
@@ -98,16 +98,12 @@ class AdmissionregistrationV1Api(object):
             'body',
             'pretty',
             'dry_run',
-            'field_manager'
+            'field_manager',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -134,17 +130,19 @@ class AdmissionregistrationV1Api(object):
         if 'field_manager' in local_var_params and local_var_params['field_manager'] is not None:  # noqa: E501
             query_params.append(('fieldManager', local_var_params['field_manager']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -193,7 +191,7 @@ class AdmissionregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.create_validating_webhook_configuration_with_http_info(body, **kwargs)  # noqa: E501
 
-    def create_validating_webhook_configuration_with_http_info(self, body, **kwargs):  # noqa: E501
+    def create_validating_webhook_configuration_with_http_info(self, body, **kwargs):    # noqa: E501
         """create_validating_webhook_configuration  # noqa: E501
 
         create a ValidatingWebhookConfiguration  # noqa: E501
@@ -227,16 +225,12 @@ class AdmissionregistrationV1Api(object):
             'body',
             'pretty',
             'dry_run',
-            'field_manager'
+            'field_manager',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -263,17 +257,19 @@ class AdmissionregistrationV1Api(object):
         if 'field_manager' in local_var_params and local_var_params['field_manager'] is not None:  # noqa: E501
             query_params.append(('fieldManager', local_var_params['field_manager']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -330,7 +326,7 @@ class AdmissionregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.delete_collection_mutating_webhook_configuration_with_http_info(**kwargs)  # noqa: E501
 
-    def delete_collection_mutating_webhook_configuration_with_http_info(self, **kwargs):  # noqa: E501
+    def delete_collection_mutating_webhook_configuration_with_http_info(self, **kwargs):    # noqa: E501
         """delete_collection_mutating_webhook_configuration  # noqa: E501
 
         delete collection of MutatingWebhookConfiguration  # noqa: E501
@@ -380,16 +376,12 @@ class AdmissionregistrationV1Api(object):
             'propagation_policy',
             'resource_version',
             'timeout_seconds',
-            'body'
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -428,17 +420,19 @@ class AdmissionregistrationV1Api(object):
         if 'timeout_seconds' in local_var_params and local_var_params['timeout_seconds'] is not None:  # noqa: E501
             query_params.append(('timeoutSeconds', local_var_params['timeout_seconds']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -495,7 +489,7 @@ class AdmissionregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.delete_collection_validating_webhook_configuration_with_http_info(**kwargs)  # noqa: E501
 
-    def delete_collection_validating_webhook_configuration_with_http_info(self, **kwargs):  # noqa: E501
+    def delete_collection_validating_webhook_configuration_with_http_info(self, **kwargs):    # noqa: E501
         """delete_collection_validating_webhook_configuration  # noqa: E501
 
         delete collection of ValidatingWebhookConfiguration  # noqa: E501
@@ -545,16 +539,12 @@ class AdmissionregistrationV1Api(object):
             'propagation_policy',
             'resource_version',
             'timeout_seconds',
-            'body'
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -593,17 +583,19 @@ class AdmissionregistrationV1Api(object):
         if 'timeout_seconds' in local_var_params and local_var_params['timeout_seconds'] is not None:  # noqa: E501
             query_params.append(('timeoutSeconds', local_var_params['timeout_seconds']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -655,7 +647,7 @@ class AdmissionregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.delete_mutating_webhook_configuration_with_http_info(name, **kwargs)  # noqa: E501
 
-    def delete_mutating_webhook_configuration_with_http_info(self, name, **kwargs):  # noqa: E501
+    def delete_mutating_webhook_configuration_with_http_info(self, name, **kwargs):    # noqa: E501
         """delete_mutating_webhook_configuration  # noqa: E501
 
         delete a MutatingWebhookConfiguration  # noqa: E501
@@ -695,16 +687,12 @@ class AdmissionregistrationV1Api(object):
             'grace_period_seconds',
             'orphan_dependents',
             'propagation_policy',
-            'body'
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -737,17 +725,19 @@ class AdmissionregistrationV1Api(object):
         if 'propagation_policy' in local_var_params and local_var_params['propagation_policy'] is not None:  # noqa: E501
             query_params.append(('propagationPolicy', local_var_params['propagation_policy']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -799,7 +789,7 @@ class AdmissionregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.delete_validating_webhook_configuration_with_http_info(name, **kwargs)  # noqa: E501
 
-    def delete_validating_webhook_configuration_with_http_info(self, name, **kwargs):  # noqa: E501
+    def delete_validating_webhook_configuration_with_http_info(self, name, **kwargs):    # noqa: E501
         """delete_validating_webhook_configuration  # noqa: E501
 
         delete a ValidatingWebhookConfiguration  # noqa: E501
@@ -839,16 +829,12 @@ class AdmissionregistrationV1Api(object):
             'grace_period_seconds',
             'orphan_dependents',
             'propagation_policy',
-            'body'
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -881,17 +867,19 @@ class AdmissionregistrationV1Api(object):
         if 'propagation_policy' in local_var_params and local_var_params['propagation_policy'] is not None:  # noqa: E501
             query_params.append(('propagationPolicy', local_var_params['propagation_policy']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -936,7 +924,7 @@ class AdmissionregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.get_api_resources_with_http_info(**kwargs)  # noqa: E501
 
-    def get_api_resources_with_http_info(self, **kwargs):  # noqa: E501
+    def get_api_resources_with_http_info(self, **kwargs):    # noqa: E501
         """get_api_resources  # noqa: E501
 
         get available resources  # noqa: E501
@@ -963,15 +951,11 @@ class AdmissionregistrationV1Api(object):
         local_var_params = locals()
 
         all_params = [
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -988,15 +972,19 @@ class AdmissionregistrationV1Api(object):
 
         query_params = []
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -1050,7 +1038,7 @@ class AdmissionregistrationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.list_mutating_webhook_configuration_with_http_info(**kwargs)  # noqa: E501
 
-    def list_mutating_webhook_configuration_with_http_info(self, **kwargs):  # noqa: E501
+    def list_mutating_webhook_configuration_with_http_info(self, **kwargs):    # noqa: E501
         """list_mutating_webhook_configuration  # noqa: E501
 
         list or watch objects of kind MutatingWebhookConfiguration  # noqa: E501
@@ -1094,16 +1082,12 @@ class AdmissionregistrationV1Api(object):
             'limit',
             'resource_version',
             'timeout_seconds',
-            'watch'
+            'watch',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1138,15 +1122,21 @@ class AdmissionregistrationV1Api(object):
         if 'watch' in local_var_params and local_var_params['watch'] is not None:  # noqa: E501
             query_params.append(('watch', local_var_params['watch']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf;stream=watch'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                    'application/json;stream=watch',
+                    'application/vnd.kubernetes.protobuf;stream=watch',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
